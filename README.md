@@ -24,7 +24,8 @@ Generate a lightweight **HTML** or **JSON** health report for your Windows PC: s
 - **Volumes**: per-drive totals, %, per-drive **severity** and overall status.
 - **Physical disks** (if available): health/operational status via `Get-PhysicalDisk`.
 
-No external dependencies; optional Windows Storage module enhances disk health.
+> [!NOTE]
+> No external dependencies; optional Windows Storage module enhances disk health.
 
 ---
 
@@ -72,13 +73,14 @@ $vols.Data
 | `OutFile` | String | `$env:USERPROFILE\Desktop\LocalPcHealth.html` | Path for the generated HTML report.         |
 | `EmitJson`| Switch | *(not set)*                                      | Emit JSON to stdout instead of HTML file.   |
 
+> [!NOTE]
 > JSON mode is pipeline-friendly and does not write an HTML file.
 
 ---
 
 ## Severity Model
 
-Professional labels are derived from usage percentages.
+Labels are derived from usage percentages.
 
 ### Memory
 - **Warning** ≥ **80% used**
@@ -93,7 +95,8 @@ Professional labels are derived from usage percentages.
 Each volume row includes:
 - `UsedGB`, `FreeGB`, `UsedPct`, `FreePct`, machine-readable `Severity`, human label `Status`.
 
-The **Volumes** section header shows the overall status plus the **max used %** and **min free %** across all volumes.
+> [!NOTE]
+> The **Volumes** section header shows the overall status plus the **max used %** and **min free %** across all volumes.
 
 ---
 
